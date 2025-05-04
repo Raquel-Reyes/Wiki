@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import Http404
 from .forms import TemaForm
 
-FIREBASE_BASE_URL = 'https://wiki-11737-default-rtdb.firebaseio.com/temas'  # ← cambia por tu URL
+FIREBASE_BASE_URL = 'https://wiki-11737-default-rtdb.firebaseio.com/temas' 
 
 def home(request):
     if request.method == 'POST':

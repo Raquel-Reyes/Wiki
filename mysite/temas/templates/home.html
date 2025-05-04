@@ -8,20 +8,23 @@
 </head>
 
 <body>
-    <h1>Agregar nuevo tema</h1>
     <form method="POST">
+        <h1>Agregar nuevo tema</h1>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Publicar</button>
     </form>
-    <h2>Listado de temas</h2>
-    <ul>
-        {% for tema in temas %}
-        <li><a href="{% url 'detalle_tema' tema.id %}" class="boton">{{ tema.titulo }}</a></li>
-        {% empty %}
-        <li>No hay temas aún.</li>
-        {% endfor %}
-    </ul>
+
+    <div class="listado">
+        <h2>Listado de temas</h2>
+        <ul>
+            {% for tema in temas %}
+            <li><a href="{% url 'detalle_tema' tema.id %}" class="boton">{{ tema.titulo }}</a></li>
+            {% empty %}
+            <li>No hay temas aún.</li>
+            {% endfor %}
+        </ul>
+    </div>
 
 </body>
 
